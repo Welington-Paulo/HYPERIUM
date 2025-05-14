@@ -1,0 +1,209 @@
+/* --- Variáveis de Cor e Fontes --- */
+:root {
+    --color-background-dark: #1A1A1D;
+    --color-background-medium: #27272F;
+    --color-background-light: #3F3F46;
+    --color-text-primary: #E0E0E0;
+    --color-text-secondary: #B0B0B0;
+    --color-accent: #6C63FF;
+    --color-accent-hover: #534ACC;
+    --color-border: #3A3A40;
+
+    --color-background-medium-rgb: 39, 39, 47;
+    --color-background-light-rgb: 63, 63, 70;
+    --color-border-rgb: 58, 58, 64;
+    --color-accent-rgb: 108, 99, 255;
+
+    --font-body: 'Poppins', sans-serif;
+    --font-title: 'Orbitron', sans-serif;
+    --font-nav: 'Poppins', sans-serif;
+
+    /*--header-height: 70px;*/
+    --nav-height: 50px;
+}
+
+/* --- Reset Básico e Estilos Globais --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); background-color: var(--color-background-dark); color: var(--color-text-primary); line-height: 1.6; }
+a { text-decoration: none; color: inherit; transition: color 0.2s ease-in-out; }
+ul { list-style: none; }
+
+/* --- Classe Utilitária Global --- */
+.hidden {
+    display: none !important;
+}
+
+/* --- Header Principal --- */
+.site-header { box-shadow: 0 2px 8px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 1000; width: 100%; transition: background-color 0.3s ease, backdrop-filter 0.3s ease; background-color: var(--color-background-medium); }
+.site-header.scrolled { background-color: rgba(var(--color-background-medium-rgb), 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.header-top { display: flex; justify-content: space-between; align-items: center; padding: 0 30px; height: var(--header-height); border-bottom: 1px solid var(--color-border); }
+.logo-area { flex-shrink: 0; }
+.site-title { font-family: var(--font-title); font-size: 2.2em; font-weight: 700; color: var(--color-accent); letter-spacing: 1px; }
+.search-area { flex-grow: 1; display: flex; justify-content: center; padding: 0 40px; }
+.search-form { display: flex; width: 100%; max-width: 600px; }
+.search-form input[type="search"] { flex-grow: 1; padding: 12px 18px; border: 1px solid var(--color-border); border-right: none; border-radius: 6px 0 0 6px; font-size: 0.95em; font-family: var(--font-body); background-color: var(--color-background-dark); color: var(--color-text-primary); outline: none; transition: border-color 0.2s ease; }
+.search-form input[type="search"]::placeholder { color: var(--color-text-secondary); }
+.search-form input[type="search"]:focus { border-color: var(--color-accent); }
+.search-form button[type="submit"] { padding: 12px 18px; border: 1px solid var(--color-border); background-color: var(--color-background-dark); color: var(--color-text-secondary); cursor: pointer; border-radius: 0 6px 6px 0; font-size: 1em; transition: background-color 0.2s ease, color 0.2s ease; }
+.search-form button[type="submit"]:hover { background-color: var(--color-accent); color: var(--color-text-primary); border-color: var(--color-accent); }
+.user-actions { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
+.action-button { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 6px; font-size: 0.9em; font-weight: 500; color: var(--color-text-secondary); transition: background-color 0.2s ease, color 0.2s ease; }
+.action-button i { font-size: 1.4em; line-height: 1; }
+.action-button:hover { color: var(--color-accent); }
+.action-button:hover .button-text { color: var(--color-accent); }
+
+/* --- Estilos para Dropdown do Usuário Logado (ATUALIZADO) --- */
+.user-dropdown { position: relative; }
+.user-profile-button { background-color: transparent; border: none; padding: 8px 12px; padding-right: 28px; color: var(--color-text-secondary); display: flex; align-items: center; gap: 8px; cursor: pointer; transition: color 0.2s ease, background-color 0.2s ease; }
+.user-profile-button:hover,
+.user-profile-button[aria-expanded="true"] { color: var(--color-accent); background-color: rgba(var(--color-accent-rgb), 0.1); }
+.user-profile-button .button-text { color: inherit; font-weight: 500; }
+.user-profile-button i:first-child { font-size: 1.4em; }
+.dropdown-arrow { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 0.7em; transition: transform 0.2s ease; color: inherit; }
+.user-profile-button[aria-expanded="true"] .dropdown-arrow { transform: translateY(-50%) rotate(180deg); }
+.dropdown-menu { display: none; position: absolute; top: calc(100% + 8px); right: 0; background-color: var(--color-background-light); border: 1px solid var(--color-border); border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); min-width: 180px; z-index: 1001; padding: 8px 0; overflow: hidden; }
+.dropdown-menu.show { display: block; }
+.dropdown-menu a { display: block; padding: 10px 20px; color: var(--color-text-primary); font-size: 0.9em; white-space: nowrap; transition: background-color 0.2s ease, color 0.2s ease; }
+.dropdown-menu a:not(#logoutBtn):hover { background-color: var(--color-accent); color: #fff; }
+.dropdown-menu a#logoutBtn:hover { color: #e74c3c; background-color: transparent; }
+
+/* --- Navegação Principal --- */
+.main-navigation { background-color: var(--color-background-medium); height: var(--nav-height); }
+.main-navigation ul { display: flex; justify-content: center; align-items: stretch; height: 100%; }
+.main-navigation li a { display: flex; align-items: center; padding: 0 25px; height: 100%; font-family: var(--font-nav); color: var(--color-text-secondary); font-weight: 500; text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.8px; position: relative; transition: color 0.2s ease; }
+.main-navigation li a::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0; height: 3px; background-color: var(--color-accent); transition: width 0.3s ease-in-out; }
+.main-navigation li a:hover, .main-navigation li a.active { color: var(--color-text-primary); }
+.main-navigation li a:hover::after, .main-navigation li a.active::after { width: 60%; }
+
+/* --- Conteúdo Principal --- */
+.site-content { padding-top: calc(var(--header-height) + var(--nav-height)); }
+
+/* --- Banner Hero --- */
+.hero-banner { height: 60vh; min-height: 350px; background-color: #333; background-image: url('https://via.placeholder.com/1920x600/2C3E50/E0E0E0?text=Banner+Principal+Hyperium'); background-size: cover; background-position: center center; background-repeat: no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--color-text-primary); position: relative; }
+.hero-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0, 0.3); }
+.banner-content { position: relative; z-index: 1; padding: 20px; }
+.banner-content h2 { font-family: var(--font-title); font-size: 3em; margin-bottom: 0.5em; color: var(--color-accent); }
+.banner-content p { font-size: 1.2em; margin-bottom: 1em; max-width: 600px; }
+.banner-button { display: inline-block; padding: 12px 30px; background-color: var(--color-accent); color: var(--color-text-primary); border-radius: 6px; font-weight: bold; text-transform: uppercase; transition: background-color 0.2s ease; }
+.banner-button:hover { background-color: var(--color-accent-hover); }
+
+/* --- Seção de Catálogos de Jogos --- */
+.game-catalogs { padding: 40px 0; background-color: var(--color-background-dark); }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+.catalog-category { margin-bottom: 60px; }
+.catalog-header { margin-bottom: 20px; text-align: left; }
+.catalog-title { font-family: var(--font-title); font-size: 1.8em; color: var(--color-accent); padding-bottom: 10px; border-bottom: 2px solid var(--color-border); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0; }
+.game-carousel-wrapper { position: relative; padding: 0 10px; }
+.game-grid-scrollable-area { overflow-x: hidden; scrollbar-width: none; -ms-overflow-style: none; }
+.game-grid-scrollable-area::-webkit-scrollbar { display: none; }
+.game-grid { display: flex; flex-wrap: nowrap; gap: 25px; }
+.nav-button { background-color: rgba(var(--color-background-light-rgb), 0.8); color: var(--color-text-primary); border: 1px solid rgba(var(--color-border-rgb), 0.5); border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.3s ease, transform 0.2s ease; font-size: 1.1em; position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; opacity: 0.7; }
+.nav-button.prev-button { left: -5px; }
+.nav-button.next-button { right: -5px; }
+.game-carousel-wrapper:hover .nav-button:not(:disabled) { opacity: 1; }
+.nav-button:hover:not(:disabled) { background-color: var(--color-accent); border-color: var(--color-accent-hover); transform: translateY(-50%) scale(1.1); opacity: 1; }
+.nav-button:disabled { opacity: 0.2 !important; cursor: not-allowed; transform: translateY(-50%); }
+.nav-button i { pointer-events: none; }
+
+/* --- Estilização dos Game Cards (PLACEHOLDERS) --- */
+.game-card { background-color: var(--color-background-light); border-radius: 6px; padding: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.15); border: 1px solid transparent; transition: background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out; display: flex; align-items: center; gap: 12px; flex: 0 0 auto; width: 300px; min-height: 88px; position: relative; overflow: hidden; }
+.game-card:hover { background-color: var(--color-background-medium); border-color: var(--color-border); transform: translateY(-3px); }
+.game-card-image-placeholder { flex-shrink: 0; width: 64px; height: 64px; border-radius: 4px; background-color: var(--color-background-medium); display: flex; align-items: center; justify-content: center; }
+.generic-placeholder-icon { font-size: 2em; color: var(--color-text-secondary); opacity: 0.5; }
+.game-card-info-placeholder { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+.title-placeholder, .studio-placeholder { background-color: var(--color-background-medium); border-radius: 3px; height: 12px; }
+.title-placeholder { width: 70%; }
+.studio-placeholder { width: 50%; }
+.play-button-overlay { position: absolute; right: 12px; top: 50%; transform: translateY(-50%) scale(0.8); background-color: var(--color-accent); color: var(--color-text-primary); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.1em; cursor: pointer; opacity: 0; transition: opacity 0.2s ease, transform 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+.game-card:hover .play-button-overlay { opacity: 1; transform: translateY(-50%) scale(1); }
+.play-button-overlay:hover { background-color: var(--color-accent-hover); transform: translateY(-50%) scale(1.1) !important; }
+.play-button-overlay i { margin-left: 2px; }
+
+/* --- Rodapé simples --- */
+.site-footer-bottom { background-color: var(--color-background-medium); color: var(--color-text-secondary); text-align: center; padding: 20px; font-size: 0.9em; border-top: 1px solid var(--color-border); }
+
+/* --- Estilos para a Página de Login/Cadastro --- */
+.login-page-body { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; padding-top: 20px; background-color: var(--color-background-dark); }
+.login-page-header { width: 100%; text-align: center; margin-bottom: 30px; }
+.login-page-header .site-title-link { text-decoration: none; }
+.login-page-header .site-title { font-family: var(--font-title); font-size: 2.5em; font-weight: 700; color: var(--color-accent); letter-spacing: 1px; margin: 0; }
+.login-container { display: flex; justify-content: center; align-items: center; width: 100%; padding: 20px; }
+.auth-panel { background-color: #ffffff; color: var(--color-background-dark); padding: 30px 40px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); width: 100%; max-width: 450px; text-align: center; min-height: 350px; display: flex; flex-direction: column; justify-content: center; }
+.auth-panel h2 { font-family: var(--font-title); color: var(--color-accent); margin-bottom: 25px; font-size: 1.8em; }
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { display: block; font-weight: 500; margin-bottom: 8px; font-size: 0.9em; color: #555; }
+.form-group input[type="email"], .form-group input[type="password"], .form-group input[type="text"], .form-group input[type="date"] { width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; font-family: var(--font-body); transition: border-color 0.2s ease; }
+.form-group input:focus { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 2px rgba(var(--color-accent-rgb), 0.3); }
+.auth-button { width: 100%; padding: 12px 20px; background-color: var(--color-accent); color: #fff; border: none; border-radius: 5px; font-family: var(--font-nav); font-size: 1em; font-weight: 600; text-transform: uppercase; cursor: pointer; transition: background-color 0.2s ease; letter-spacing: 0.5px; }
+.auth-button:hover { background-color: var(--color-accent-hover); }
+.toggle-form-text { margin-top: 25px; font-size: 0.9em; color: #444; }
+.toggle-form-btn { background: none; border: none; color: var(--color-accent); font-weight: 600; cursor: pointer; padding: 0; font-size: 1em; }
+.toggle-form-btn:hover { text-decoration: underline; }
+.auth-message { margin-top: 20px; padding: 12px 15px; border-radius: 5px; font-size: 0.9em; min-height: 45px; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1.4;}
+.auth-message.success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.auth-message.error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+/* --- Ajustes Responsivos --- */
+@media (max-width: 992px) { /* Tablets */
+    .header-top { padding: 0 20px; }
+    .search-area { padding: 0 20px; }
+    .main-navigation li a { padding: 0 18px; font-size: 0.8em; }
+    .site-title { font-size: 2em; }
+    .hero-banner { height: 50vh; }
+    .banner-content h2 { font-size: 2.5em; }
+    .game-card { width: 280px; }
+    .game-grid { gap: 20px; }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    .header-top { flex-wrap: wrap; height: auto; padding-top: 15px; padding-bottom: 15px; }
+    .logo-area { width: 100%; text-align: center; margin-bottom: 15px; }
+    .search-area { width: 100%; order: 3; padding: 0; margin-top: 10px; }
+    .search-form { max-width: 100%; }
+    .user-actions { width: 100%; justify-content: center; order: 2; margin-bottom: 15px; }
+    .main-navigation { height: auto; }
+    .main-navigation ul { flex-direction: column; align-items: stretch; }
+    .main-navigation li a { text-align: center; padding: 12px 20px; border-bottom: 1px solid var(--color-border); }
+    .main-navigation li:last-child a { border-bottom: none; }
+    .main-navigation li a::after { bottom: 0; left: 0; transform: none; width: 100%; height: 0; transition: height 0.3s ease-in-out; }
+    .main-navigation li a:hover::after, .main-navigation li a.active::after { height: 3px; width: 100%; }
+    .action-button .button-text { display: none; }
+    #userProfileNameDisplay.button-text { display: inline-block; max-width: 100px; overflow: hidden; text-overflow: ellipsis; vertical-align: middle;}
+    .action-button i { font-size: 1.6em; }
+    .user-profile-button i:first-child { font-size: 1.6em; }
+    .action-button { padding: 10px; }
+    .user-profile-button { padding: 10px; padding-right: 25px; }
+
+
+    .site-content { padding-top: 0; }
+    .hero-banner { height: 40vh; min-height: 300px; }
+    .banner-content h2 { font-size: 2em; }
+    .banner-content p { font-size: 1em; }
+    .catalog-title { font-size: 1.6em; text-align: center; }
+    .catalog-header { justify-content: center; }
+    
+    .game-card { width: 250px; gap: 10px; padding: 10px; }
+    .game-card-image-placeholder { width: 50px; height: 50px; }
+    .generic-placeholder-icon { font-size: 1.5em; }
+    .title-placeholder { height: 10px; }
+    .studio-placeholder { height: 10px; }
+    .play-button-overlay { width: 36px; height: 36px; font-size: 1em; right: 8px; }
+    .game-grid { gap: 15px; }
+    .nav-button { width: 38px; height: 38px; font-size: 0.9em; }
+    .nav-button.prev-button { left: 0px; }
+    .nav-button.next-button { right: 0px; }
+    .game-carousel-wrapper { padding: 0 5px; }
+
+    /* Login Page Mobile */
+    .auth-panel { padding: 25px 20px; }
+    .auth-panel h2 { font-size: 1.6em; }
+}
+
+@media (max-width: 480px) { /* Telas bem pequenas */
+    .site-title { font-size: 1.8em; }
+    .user-actions { gap: 15px; }
+    .banner-content h2 { font-size: 1.8em; }
+    .game-card { width: calc(100vw - 40px); } 
+    .game-grid { gap: 10px; }
+    #userProfileNameDisplay.button-text { max-width: 70px; }
+}

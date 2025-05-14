@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperium - Game Store</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-top">
+            <div class="logo-area">
+                <h1 class="site-title">Hyperium</h1>
+            </div>
+            <div class="search-area">
+                <form action="/search" method="get" class="search-form">
+                    <input type="search" name="q" placeholder="Buscar em Hyperium..." aria-label="Barra de Pesquisa">
+                    <button type="submit" aria-label="Buscar"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="user-actions">
+                <a href="/carrinho" class="action-button cart-button" aria-label="Carrinho de Compras">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="button-text">Carrinho</span>
+                </a>
+                <a href="login.html" class="action-button login-button" id="loginLink" aria-label="Entrar na Conta">
+                    <i class="fas fa-user-circle"></i>
+                    <span class="button-text">Entrar</span>
+                </a>
+                <div class="user-dropdown hidden" id="userDropdownContainer">
+                    <button class="user-profile-button" id="userProfileBtn" aria-label="Menu do Usuário" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="userProfileNameDisplay" class="button-text"></span>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </button>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="#" id="logoutBtn">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="/loja" class="active">Loja</a></li>
+                <li><a href="/recomendados">Recomendados</a></li>
+                <li><a href="/postagens">Postagens</a></li>
+                <li><a href="/noticias">Notícias</a></li>
+                <li><a href="/categorias">Categorias</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="site-content">
+        <section class="hero-banner">
+            <div class="banner-content">
+                <h2>Lançamento Épico!</h2>
+                <p>Confira o novo jogo que vai abalar o universo.</p>
+                <a href="#" class="banner-button">Saiba Mais</a>
+            </div>
+        </section>
+
+        <section class="game-catalogs">
+            <div class="container">
+                <!-- Mais Famosos -->
+                <div class="catalog-category" data-carousel-id="famosos">
+                    <div class="catalog-header"> <h2 class="catalog-title">Mais Famosos</h2> </div>
+                    <div class="game-carousel-wrapper">
+                        <button class="nav-button prev-button" aria-label="Anterior" data-direction="prev"><i class="fas fa-chevron-left"></i></button>
+                        <div class="game-grid-scrollable-area">
+                            <div class="game-grid">
+                                <!-- Card 1 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 2 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 3 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 4 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 5 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 6 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 7 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 8 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 9 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 10 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                            </div>
+                        </div>
+                        <button class="nav-button next-button" aria-label="Próximo" data-direction="next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <!-- Mais Vendidos -->
+                <div class="catalog-category" data-carousel-id="vendidos">
+                    <div class="catalog-header"> <h2 class="catalog-title">Mais Vendidos</h2> </div>
+                    <div class="game-carousel-wrapper">
+                        <button class="nav-button prev-button" aria-label="Anterior" data-direction="prev"><i class="fas fa-chevron-left"></i></button>
+                        <div class="game-grid-scrollable-area">
+                            <div class="game-grid">
+                                <!-- Card 1 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 2 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 3 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 4 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 5 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 6 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 7 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 8 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 9 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 10 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                            </div>
+                        </div>
+                        <button class="nav-button next-button" aria-label="Próximo" data-direction="next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <!-- Recentes -->
+                <div class="catalog-category" data-carousel-id="recentes">
+                    <div class="catalog-header"> <h2 class="catalog-title">Recentes</h2> </div>
+                    <div class="game-carousel-wrapper">
+                        <button class="nav-button prev-button" aria-label="Anterior" data-direction="prev"><i class="fas fa-chevron-left"></i></button>
+                        <div class="game-grid-scrollable-area">
+                            <div class="game-grid">
+                                <!-- Card 1 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 2 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 3 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 4 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 5 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 6 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 7 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 8 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 9 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                                <!-- Card 10 (Genérico) --> <div class="game-card"> <div class="game-card-image-placeholder"><i class="fas fa-image generic-placeholder-icon"></i></div> <div class="game-card-info-placeholder"> <div class="title-placeholder"></div> <div class="studio-placeholder"></div> </div> <button class="play-button-overlay" aria-label="Ver detalhes"><i class="fas fa-play"></i></button> </div>
+                            </div>
+                        </div>
+                        <button class="nav-button next-button" aria-label="Próximo" data-direction="next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer-bottom">
+        <p>© 2023 Hyperium. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
