@@ -165,7 +165,7 @@ ul { list-style: none; }
 
 /* --- Conteúdo Principal e Banner --- */
 .site-content { padding-top: calc(var(--header-height) + var(--nav-height)); }
-.hero-banner { height: 60vh; min-height: 350px; background-color: #333; background-image: url('https://i.redd.it/4vzmkbhfssg21.png'); background-size: cover; background-position: center center; background-repeat: no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--color-text-primary); position: relative; }
+.hero-banner { height: 60vh; min-height: 350px; background-color: #333; background-image: url('https://via.placeholder.com/1920x600/2C3E50/E0E0E0?text=Banner+Principal+Hyperium'); background-size: cover; background-position: center center; background-repeat: no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--color-text-primary); position: relative; }
 .hero-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0, 0.3); }
 .banner-content { position: relative; z-index: 1; padding: 20px; }
 .banner-content h2 { font-family: var(--font-title); font-size: 3em; margin-bottom: 0.5em; color: var(--color-accent); }
